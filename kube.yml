@@ -18,4 +18,4 @@
     - name: increase replicas
       command: kubectl scale deploy devopcert --replicas=2
     - name: deploy service
-      command: kubectl expose deploy devopcert --name devopCert-svc --port 80 --type NodePort
+      command: kubectl expose deploy devopcert --name devopcert-svc --port 80 --type NodePort
