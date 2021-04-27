@@ -3,19 +3,19 @@
   tasks:
     - name: remove any previous app services
       shell: |
-         if [ `kubectl get deploy | grep -v NAME | awk '{print $1}' | grep devopCert | wc -l` -gt 0 ]; then
-            kubectl delete deploy `kubectl get deploy | grep -v NAME | awk '{print $1}' | grep devopCert`
+         if [ `kubectl get deploy | grep -v NAME | awk '{print $1}' | grep devopcert | wc -l` -gt 0 ]; then
+            kubectl delete deploy `kubectl get deploy | grep -v NAME | awk '{print $1}' | grep devopcert`
          else
             echo "No app deployments found"
          fi
-         if [ `kubectl get svc | grep devopCert-svc  | awk '{print $1}' | wc -l` -gt 0 ]; then
-            kubectl delete svc `kubectl get svc | grep devopCert-svc | awk '{print $1}'`
+         if [ `kubectl get svc | grep devopcert-svc  | awk '{print $1}' | wc -l` -gt 0 ]; then
+            kubectl delete svc `kubectl get svc | grep devopcert-svc | awk '{print $1}'`
          else
             echo "No app service found"
          fi
     - name: deploy app
-      command: kubectl create deploy devopCert --image=mikecode021/devops_cert_project:{{ build }}
+      command: kubectl create deploy devopcert --image=mikecode021/devops_cert_project:{{ build }}
     - name: increase replicas
-      command: kubectl scale deploy devopCert --replicas=2
+      command: kubectl scale deploy devopcert --replicas=2
     - name: deploy service
-      command: kubectl expose deploy devopCert --name devopCert-svc --port 80 --type NodePort
+      command: kubectl expose deploy devopcert --name devopCert-svc --port 80 --type NodePort
