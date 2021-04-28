@@ -1,5 +1,5 @@
 FROM devopsedu/webapp
 RUN rm /var/www/html/index.html
-#RUN ls /var/www/html
+EXPOSE 80
 ADD ./* /var/www/html/
 CMD apachectl -D FOREGROUND
