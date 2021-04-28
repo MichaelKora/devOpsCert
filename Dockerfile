@@ -8,8 +8,8 @@ COPY ./* /var/www/html/
 #FROM php:7.4-cli
 
 #COPY ./* /usr/src/myapp/
-WORKDIR /var/www/html/
+#WORKDIR /var/www/html/
 
 #RUN chown -R www-data:www-data /app && a2enmod rewrite
 
-CMD [ "php", "./content/home.php" ]
+#CMD [ "php", "./content/home.php" ]
