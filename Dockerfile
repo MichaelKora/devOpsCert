@@ -1,4 +1,4 @@
-FROM php
-COPY ./* ./
-EXPOSE 80
-CMD [ "php", "-S", "0.0.0.0:80" ]
+FROM devopsedu/webapp
+ADD ./* /var/www/html/
+RUN rm /var/www/html/index.html
+CMD apachetl -D FOREGROUND
