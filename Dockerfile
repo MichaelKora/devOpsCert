@@ -6,7 +6,7 @@ COPY ./* /var/www/html/
 #RUN chmod +r usr/local/lib/php/*
 #RUN chown -R www-data:www-data
 #/app && a2enmod rewrite
-CMD ["start-apache"]
+#CMD ["start-apache"]
 
 #FROM php:7.4-cli
 
@@ -15,4 +15,4 @@ WORKDIR /var/www/html/
 
 #RUN chown -R www-data:www-data /app && a2enmod rewrite
 
-#CMD [ "php", "./content/home.php" ]
+CMD [ "php", "/content/home.php" ]
