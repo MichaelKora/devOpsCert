@@ -3,6 +3,7 @@ FROM php:7.2-apache
 # Copy application source
 #COPY ./* /var/www/html/
 COPY ./* usr/local/lib/php/
+RUN chmod +r usr/local/lib/php/*
 #RUN chown -R www-data:www-data /app && a2enmod rewrite
 #CMD ["start-apache"]
 
