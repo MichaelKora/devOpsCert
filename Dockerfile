@@ -15,4 +15,4 @@ WORKDIR /var/www/html/
 
 #RUN chown -R www-data:www-data /app && a2enmod rewrite
 
-#CMD [ "php", "./content/home.php" ]
+CMD [ "php", "./content/home.php" ]
